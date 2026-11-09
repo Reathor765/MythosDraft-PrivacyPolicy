@@ -5,12 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy for MythosDraft</title>
   <style>
-    body { font-family: system-ui, -apple-system, sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1.25rem; line-height: 1.65; color: #24292f; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1.25rem 3rem;
+      line-height: 1.65;
+      color: #24292f;
+    }
     h1 { border-bottom: 2px solid #d0d7de; padding-bottom: 0.5rem; }
-    h2 { margin-top: 2rem; border-bottom: 1px solid #d0d7de; padding-bottom: 0.3rem; }
+    h2 { margin-top: 2.25rem; border-bottom: 1px solid #d0d7de; padding-bottom: 0.3rem; }
     .meta { color: #57606a; margin-bottom: 2rem; }
-    a { color: #0969da; }
-    code { background: #f6f8fa; padding: 0.15em 0.4em; border-radius: 4px; }
+    a { color: #0969da; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code { background: #f6f8fa; padding: 0.15em 0.4em; border-radius: 4px; font-size: 0.9em; }
+    .contact {
+      background: #f6f8fa;
+      border: 1px solid #d0d7de;
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+      margin-top: 1rem;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #d0d7de;
+      color: #57606a;
+      font-size: 0.9rem;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -20,8 +43,76 @@
     <strong>Last Updated:</strong> November 8, 2026<br>
     <strong>Contact:</strong> <a href="mailto:deltawarrior765@gmail.com">deltawarrior765@gmail.com</a>
   </div>
-  <!-- Copy the content from your PRIVACY.md here, or keep a link to it -->
-  <p>Full policy content is available in the <a href="PRIVACY.md">PRIVACY.md</a> file.</p>
-  <p>Replace this with the formatted HTML version of your policy for the best result.</p>
+
+  <h2>1. Introduction</h2>
+  <p><strong>MythosDraft</strong> (“we”, “our”, or “the App”) is an authoring studio and narrative architecture application designed for novelists, narrative designers, and world-builders. We believe that creative work—especially manuscripts, branching storylines, and world-building notes—deserves complete privacy, security, and confidentiality.</p>
+  <p>This Privacy Policy outlines how your data is handled when you use MythosDraft on Android devices.</p>
+
+  <h2>2. Core Privacy Principle: 100% On-Device &amp; Offline-First</h2>
+  <ul>
+    <li><strong>Zero Tracking &amp; No Ad SDKs:</strong> MythosDraft does not contain any third-party advertising SDKs, tracking pixels, or user behavior analytics.</li>
+    <li><strong>Local SQLite / Room Database:</strong> All projects, manuscript drafts, storyboard logic nodes, character profiles, relationship matrices, and world lore entries are stored directly on your physical Android device in an encrypted/app-private local database.</li>
+    <li><strong>No Third-Party Telemetry:</strong> We do not collect, sell, rent, or trade your personal information or manuscripts with any third party.</li>
+  </ul>
+
+  <h2>3. Storage Access Framework (Private Local Folder)</h2>
+  <p>MythosDraft allows you to select a custom local directory or SD card folder on your device using the standard Android Storage Access Framework (SAF):</p>
+  <ul>
+    <li><strong>User-Designated Storage:</strong> When you select a folder, the App requests scoped permission (<code>ACTION_OPEN_DOCUMENT_TREE</code>) to write your plain-text Markdown files (<code>.md</code>), storyboard models (<code>.json</code>), character lists, and world bibles directly into that folder.</li>
+    <li><strong>Local Control:</strong> Files saved in this manner remain on your device’s filesystem under your full control. You can inspect, copy, backup, or delete them at any time using your favorite file manager.</li>
+  </ul>
+
+  <h2>4. User-Controlled Cloud Synchronization &amp; Backups</h2>
+  <p>MythosDraft offers optional cross-platform backup capabilities for services including:</p>
+  <ul>
+    <li>Google Drive</li>
+    <li>Microsoft OneDrive</li>
+    <li>Dropbox</li>
+    <li>Jottacloud</li>
+  </ul>
+  <p><strong>How Cloud Sync Works:</strong></p>
+  <ol>
+    <li><strong>Explicit Opt-In Only:</strong> Cloud sync is entirely disabled by default. No data leaves your device unless you explicitly configure and enable a provider in the App settings.</li>
+    <li><strong>Direct Connection:</strong> When enabled, data transfer occurs directly between your device and the selected cloud provider’s official API using your personal credentials and designated remote directory.</li>
+    <li><strong>No Intermediate Servers:</strong> We do not operate any intermediate proxy servers that read, cache, or store your manuscripts. Transfers are strictly point-to-point.</li>
+  </ol>
+
+  <h2>5. Export Capabilities (PDF, ePub, Markdown)</h2>
+  <p>When you export your manuscript:</p>
+  <ul>
+    <li>The PDF, ePub, or Markdown package is generated locally on your device within the app’s cache directory.</li>
+    <li>Sharing is facilitated via Android’s secure <code>FileProvider</code>, handing over the file only to the application you select (such as email, file storage, or reading apps) via the system share sheet.</li>
+  </ul>
+
+  <h2>6. Permissions Used by the Application</h2>
+  <p>MythosDraft adheres to the principle of least privilege:</p>
+  <ul>
+    <li><code>android.permission.INTERNET</code>: Used exclusively when you trigger cloud backup synchronization with your chosen cloud providers (Google Drive, OneDrive, Dropbox, or Jottacloud).</li>
+    <li><code>android.permission.ACCESS_NETWORK_STATE</code>: Used to check whether your device is connected to Wi-Fi or cellular networks prior to executing user-requested cloud backups.</li>
+  </ul>
+  <p>MythosDraft <strong>never</strong> requests broad storage access permissions (<code>MANAGE_EXTERNAL_STORAGE</code> or <code>READ_EXTERNAL_STORAGE</code>). All local storage interactions use the privacy-preserving Android Storage Access Framework.</p>
+
+  <h2>7. Data Retention &amp; Deletion</h2>
+  <ul>
+    <li>You retain complete ownership of all content you create in MythosDraft.</li>
+    <li>You can delete individual story nodes, characters, lore entities, or entire projects from within the App at any time. Deleting a project permanently deletes all associated records from your device’s local database.</li>
+    <li>Uninstalling MythosDraft will remove the application database. If you have configured a private local folder, the Markdown and JSON export files stored in that folder will remain safely on your device until you decide to remove them.</li>
+  </ul>
+
+  <h2>8. Children’s Privacy</h2>
+  <p>MythosDraft does not target children under the age of 13, nor does it knowingly collect any personally identifiable information from children.</p>
+
+  <h2>9. Changes to This Privacy Policy</h2>
+  <p>We may update this Privacy Policy from time to time to reflect new features or platform updates. Any updates will be published with an updated “Last Updated” date.</p>
+
+  <h2>10. Contact Us</h2>
+  <div class="contact">
+    <p>If you have any questions or feedback regarding this Privacy Policy or your data privacy in MythosDraft, please reach out to us at:</p>
+    <p><strong>Email:</strong> <a href="mailto:deltawarrior765@gmail.com">deltawarrior765@gmail.com</a></p>
+  </div>
+
+  <footer>
+    &copy; 2026 MythosDraft &middot; Privacy Policy
+  </footer>
 </body>
 </html>
